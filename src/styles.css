@@ -1,0 +1,135 @@
+@import "tailwindcss" source("../");
+
+:root {
+  --tekken-bg: #0a0a10;
+  --tekken-surface: #12121c;
+  --tekken-border: #1e1e2e;
+  --tekken-red: #c41e2a;
+  --tekken-red-bright: #e8293a;
+  --tekken-gold: #d4a017;
+  --tekken-gold-bright: #f0bb2a;
+  --tekken-text: #e8e8f0;
+  --tekken-muted: #8888a8;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--tekken-bg);
+  color: var(--tekken-text);
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Tekken-style heading accent */
+.tekken-heading {
+  position: relative;
+  display: inline-block;
+}
+
+.tekken-heading::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--tekken-red), var(--tekken-gold), transparent);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Section separator */
+.tekken-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--tekken-red), var(--tekken-gold), transparent);
+  margin: 2rem 0;
+}
+
+/* Card hover glow */
+.tekken-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tekken-card:hover {
+  border-color: var(--tekken-red) !important;
+  box-shadow: 0 0 20px rgba(196, 30, 42, 0.2);
+}
+
+/* Badge styles */
+.badge-game {
+  background: rgba(196, 30, 42, 0.2);
+  color: #ff6b7a;
+  border: 1px solid rgba(196, 30, 42, 0.4);
+}
+
+.badge-movie {
+  background: rgba(212, 160, 23, 0.2);
+  color: #f0cc5a;
+  border: 1px solid rgba(212, 160, 23, 0.4);
+}
+
+.badge-extra {
+  background: rgba(100, 100, 200, 0.2);
+  color: #9999dd;
+  border: 1px solid rgba(100, 100, 200, 0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--tekken-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tekken-red);
+  border-radius: 3px;
+}
+
+/* Prose styles for content pages */
+.prose-tekken h2 {
+  color: var(--tekken-gold-bright);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.prose-tekken h3 {
+  color: var(--tekken-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.prose-tekken p {
+  color: #b0b0c8;
+  line-height: 1.75;
+  margin: 0.75rem 0;
+}
+
+.prose-tekken ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+
+.prose-tekken ul li {
+  color: #b0b0c8;
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  position: relative;
+}
+
+.prose-tekken ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--tekken-red);
+}
+
+.prose-tekken strong {
+  color: var(--tekken-text);
+}
